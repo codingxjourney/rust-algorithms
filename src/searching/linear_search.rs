@@ -16,7 +16,7 @@ mod tests {
     #[test]
     fn search_strings() {
         let index = linear_search(&"x", &vec!["a", "b", "c", "x", "y", "z"]);
-        assert_eq!(index, Some(0));
+        assert_eq!(index, Some(3));
     }
 
     #[test] 
