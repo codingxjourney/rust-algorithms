@@ -15,7 +15,7 @@ mod tests {
 
     #[test]
     fn search_strings() {
-        let index = linear_search(&"a", &vec!["a", "b", "c", "d", "google", "zoo"]);
+        let index = linear_search(&"x", &vec!["a", "b", "c", "x", "y", "z"]);
         assert_eq!(index, Some(0));
     }
 
@@ -24,13 +24,13 @@ mod tests {
         let index = linear_search(&7, &vec![1, 2, 3, 4, 5, 6, 7]);
         assert_eq!(index, Some(6));
 
-        let index = linear_search(&3, &vec![1, 2, 3, 4]);
+        let index = linear_search(&3, &vec![1, 2, 3, 4, 5, 6, 7]);
         assert_eq!(index, Some(2));
 
-        let index = linear_search(&2, &vec![1, 2, 3, 4]);
+        let index = linear_search(&2, &vec![1, 2, 3, 4, 5, 6, 7]);
         assert_eq!(index, Some(1));
 
-        let index = linear_search(&1, &vec![1, 2, 3, 4]);
+        let index = linear_search(&1, &vec![1, 2, 3, 4, 5, 6, 7]);
         assert_eq!(index, Some(0));
     }
 
