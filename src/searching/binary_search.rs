@@ -21,41 +21,39 @@ mod tests {
     use super::*;
 
     #[test]
-    fn empty() {
-        let index = binary_search(&"a", &vec![]);
-        assert_eq!(index, None);
-    }
-
-    #[test]
-    fn one_item() {
-        let index = binary_search(&"a", &vec!["a"]);
-        assert_eq!(index, Some(0));
-    }
-
-    #[test]
     fn search_strings() {
-        let index = binary_search(&"a", &vec!["a", "b", "c", "d", "google", "zoo"]);
-        assert_eq!(index, Some(0));
+        let searching_value = "x";
+        let arr_list = vec!["r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        
+        let search = binary_search(&searching_value, &vec![]);
+        assert_eq!(search, Some(6));
     }
 
     #[test]
     fn search_ints() {
-        let index = binary_search(&4, &vec![1, 2, 3, 4]);
-        assert_eq!(index, Some(3));
-
-        let index = binary_search(&3, &vec![1, 2, 3, 4]);
-        assert_eq!(index, Some(2));
-
-        let index = binary_search(&2, &vec![1, 2, 3, 4]);
-        assert_eq!(index, Some(1));
-
-        let index = binary_search(&1, &vec![1, 2, 3, 4]);
-        assert_eq!(index, Some(0));
+        let searching_value = 7;
+        let arr_list = vec![0, 1, 2, 3, 4, 5, 6, 7, 8];
+        
+        let search = binary_search(&searching_value, &vec![]);
+        assert_eq!(search, Some(7));
     }
 
     #[test]
-    fn not_found() {
-        let index = binary_search(&5, &vec![1, 2, 3, 4]);
-        assert_eq!(index, None);
+    fn empty_arr_list() {
+        let searching_value = 7;
+        let arr_list = vec![];
+        
+        let search = binary_search(&searching_value, &vec![]);
+        assert_eq!(search, None);
     }
+
+    #[test]
+    fn searching_value_not_found() {
+        let searching_value = 7;
+        let arr_list = vec![0, 1, 2, 3, 4, 5];
+        
+        let search = binary_search(&searching_value, &vec![]);
+        assert_eq!(search, None);
+    }
+    
 }
